@@ -1,10 +1,15 @@
 import React, { PureComponent } from "react";
 
-import Layout from "./components/SideNav";
+import Layout from "./components/Layout";
+import Dashboard from "./containers/Dashboard";
 
 class App extends PureComponent {
   render() {
-    return <Layout />;
+    return (
+      <Layout>
+        <Dashboard />
+      </Layout>
+    );
   }
 }
 

@@ -2,11 +2,13 @@ import React, { Fragment } from "react";
 
 import SideNav from "../SideNav";
 
-class Layout = ({ children }) => {
+const Layout = ({ children }) => (
   <Fragment>
     <SideNav />
-    <div id="main-content">
+    <div id="main-contents">
       {children}
     </div>
-  </Fragmen>
-};
+  </Fragment>
+);
+
+export default Layout;

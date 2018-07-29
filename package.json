@@ -7,7 +7,9 @@
     "classnames": "^2.2.6",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-grid-layout": "^0.16.6",
     "react-scripts": "1.1.4",
+    "react-tradingview-widget": "^1.2.5",
     "reactstrap": "^6.3.1"
   },
   "scripts": {

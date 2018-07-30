@@ -1,0 +1,9 @@
+@media (min-width: 767px) {
+  #main-contents {
+    margin-left: 250px;
+  }
+}
+
+#main-contents {
+  padding-bottom: 150px;
+}

@@ -1,15 +1,44 @@
 import React, { PureComponent } from "react";
-import { Responsive, WidthProvider } from 'react-grid-layout';
+import { Responsive, WidthProvider } from "react-grid-layout";
 
 import "./styles.css";
 
-import Widget1 from "./Widget1";
+import CalculateStuff from "../../components/Widgets/CalculateStuff";
+import Reddit from "../../components/Widgets/Reddit";
+import SteemitProfile from "../../components/Widgets/SteemitProfile";
+import SteemitTrending from "../../components/Widgets/SteemitTrending";
+import TradingView from "../../components/Widgets/TradingView";
+import Twitter from "../../components/Widgets/Twitter";
+
+const defaults = { x: 0, y: 1, w: 12, h: 1, minH: 1 };
+const sidebarWidth = 250;
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 const layouts = {
-  lg: [{ i: "widget1", x: 3, y: 0, w: 6, h: 2 }],
-  md: [{ i: "widget1", x: 4, y: 0, w: 8, h: 2 }],
-  sm: [{ i: "widget1", x: 0, y: 0, w: 12, h: 2 }]
+  lg: [
+    { ...defaults, i: "twitter", x: 0, y: 0, w: 3, h: 2 },
+    { ...defaults, i: "reddit", x: 3, y: 0, w: 4, h: 2 },
+    { ...defaults, i: "tradingView", x: 7, y: 0, w: 10, h: 2 },
+    { ...defaults, i: "calculateStuff", x: 0, y: 4, w: 7 },
+    { ...defaults, i: "steemitTrending", x: 7, y: 4, w: 10 },
+    { ...defaults, i: "steemitProfile", x: 0, y: 5, w: 17 }
+  ],
+  md: [
+    { ...defaults, i: "twitter", h: 2 },
+    { ...defaults, i: "reddit", h: 2 },
+    { ...defaults, i: "tradingView", h: 2 },
+    { ...defaults, i: "calculateStuff" },
+    { ...defaults, i: "steemitProfile" },
+    { ...defaults, i: "steemitTrending" }
+  ],
+  sm: [
+    { ...defaults, i: "twitter", h: 2 },
+    { ...defaults, i: "reddit", h: 2 },
+    { ...defaults, i: "tradingView", h: 2 },
+    { ...defaults, i: "calculateStuff" },
+    { ...defaults, i: "steemitProfile" },
+    { ...defaults, i: "steemitTrending" }
+  ]
 };
 
 class Dashboard extends PureComponent {
@@ -17,12 +46,29 @@ class Dashboard extends PureComponent {
     return (
       <ResponsiveGridLayout
         className="layout"
+        margin={[3, 3]}
         layouts={layouts}
-        breakpoints={{ lg: 1200, md: 767, sm: 0 }}
-        cols={{ lg: 12, md: 12, sm: 12 }}
+        rowHeight={235}
+        breakpoints={{ lg: 1200 - sidebarWidth, md: 767 - sidebarWidth, sm: 0 }}
+        cols={{ lg: 17, md: 12, sm: 12 }}
       >
-        <div key="widget1">
-          <Widget1 />
+        <div key="tradingView">
+          <TradingView paddingTop={18} />
+        </div>
+        <div key="calculateStuff">
+          <CalculateStuff />
+        </div>
+        <div key="steemitProfile">
+          <SteemitProfile />
+        </div>
+        <div key="steemitTrending">
+          <SteemitTrending />
+        </div>
+        <div key="twitter">
+          <Twitter />
+        </div>
+        <div key="reddit">
+          <Reddit />
         </div>
       </ResponsiveGridLayout>
     );

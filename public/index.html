@@ -10,6 +10,8 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+    <script src="https://mktcode.github.io/steemit-widgets/assets/js/steemit-widgets.min.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -26,6 +28,12 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async>
+      var crate = new Crate({
+        server: '396334922522165248',
+        channel: '396334922522165250'
+      })
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

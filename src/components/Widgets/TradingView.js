@@ -1,5 +1,8 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, Fragment } from "react";
 import TradingViewWidget from "react-tradingview-widget";
+
+import Base from "./Base";
+import CryptoCompare from "./CryptoCompare";
 
 const opts = {
   symbol: "COINBASE:BTCUSD",
@@ -25,14 +28,15 @@ const opts = {
   autosize: true
 };
 
-class Widget1 extends PureComponent {
+class TradingView extends PureComponent {
   render() {
     return (
-      <div style={{ padding: "15px 10px", height: "100%" }}>
+      <Fragment>
+        <CryptoCompare />
         <TradingViewWidget {...opts} />
-      </div>
+      </Fragment>
     );
   }
 }
 
-export default Widget1;
+export default Base(TradingView);

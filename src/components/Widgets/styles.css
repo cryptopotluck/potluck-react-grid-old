@@ -1,0 +1,9 @@
+.BaseWidget > div {
+  width: 100%;
+}
+
+.BaseWidget #marquee-container {
+  position: absolute;
+  top: 0;
+  max-width: calc(100% - 10px);
+}

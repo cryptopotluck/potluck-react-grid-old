@@ -8,6 +8,7 @@ import "./common/fonts/feather/feather.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
+import "./index.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();

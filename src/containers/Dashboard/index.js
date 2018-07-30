@@ -16,12 +16,12 @@ const sidebarWidth = 250;
 const ResponsiveGridLayout = WidthProvider(Responsive);
 const layouts = {
   lg: [
-    { ...defaults, i: "twitter", x: 0, y: 0, w: 3, h: 2 },
-    { ...defaults, i: "reddit", x: 3, y: 0, w: 4, h: 2 },
-    { ...defaults, i: "tradingView", x: 7, y: 0, w: 10, h: 2 },
-    { ...defaults, i: "calculateStuff", x: 0, y: 4, w: 7 },
-    { ...defaults, i: "steemitTrending", x: 7, y: 4, w: 10 },
-    { ...defaults, i: "steemitProfile", x: 0, y: 5, w: 17 }
+    { ...defaults, i: "steemitTrending", x: 0, y: 0, w: 4, h: 4 },
+    { ...defaults, i: "reddit", x: 4, y: 0, w: 4, h: 4 },
+    { ...defaults, i: "tradingView", x: 8, y: 0, w: 9, h: 2 },
+    { ...defaults, i: "twitter", x: 8, y: 2, w: 4, h: 2 },
+    { ...defaults, i: "calculateStuff", x: 12, y: 2, w: 5 },
+    { ...defaults, i: "steemitProfile", x: 12, y: 3, w: 4 }
   ],
   md: [
     { ...defaults, i: "twitter", h: 2 },

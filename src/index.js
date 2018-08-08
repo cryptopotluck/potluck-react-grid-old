@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 
+import "whatwg-fetch";
+
 import "./common/css/theme.css";
 import "./common/css/custom.css";
 import "./common/fonts/feather/feather.css";

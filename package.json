@@ -6,15 +6,21 @@
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@widgetbot/react-embed": "^1.2.1",
     "classnames": "^2.2.6",
+    "json-api-normalizer": "^0.4.11",
     "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-grid-layout": "^0.16.6",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-tradingview-widget": "^1.2.5",
     "react-twitter-widgets": "^1.7.1",
-    "reactstrap": "^6.3.1"
+    "reactstrap": "^6.3.1",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0",
+    "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

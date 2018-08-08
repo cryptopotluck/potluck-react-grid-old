@@ -4,6 +4,7 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 
 import "./common/css/theme.css";
+import "./common/css/custom.css";
 import "./common/fonts/feather/feather.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "react-grid-layout/css/styles.css";

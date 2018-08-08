@@ -10,6 +10,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-grid-layout": "^0.16.6",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-tradingview-widget": "^1.2.5",
     "react-twitter-widgets": "^1.7.1",

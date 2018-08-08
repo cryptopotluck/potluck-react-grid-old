@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+  .four-oh-four {
+    border-right: 1px solid #eaeaea;
+    padding: 0 20px 0 0;
+  }
+}
+
+.four-oh-four {
+  font-size: 24px;
+  font-weight: 500;
+}

@@ -1,15 +1,14 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Layout from "../Layout";
 
-import config from "../../config";
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
+const PrivateRoute = ({ component: Component, authenticated, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      config.authenticated ? (
+      authenticated ? (
         <Layout>
           <Component {...props} />
         </Layout>
@@ -20,4 +19,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-export default PrivateRoute;
+const mapStateToProps = ({ app: { authenticated } }) => ({
+  authenticated
+});
+
+export default connect(mapStateToProps)(PrivateRoute);

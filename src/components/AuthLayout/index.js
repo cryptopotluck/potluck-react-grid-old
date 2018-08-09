@@ -1,8 +1,9 @@
 import React from "react";
+import classnames from "classnames";
 
 import videos from "../../common/images/videos";
 
-const AuthLayout = ({ title, subtitle, children }) => (
+const AuthLayout = ({ children, errors, loading, subtitle, title }) => (
   <div className="row align-items-center">
     <div
       className="col-md-6 order-md-2 mb-5 mb-md-0 d-none d-md-block"
@@ -16,7 +17,16 @@ const AuthLayout = ({ title, subtitle, children }) => (
     </div>
     <div className="col-md-6 order-md-1 px-20">
       <h1 className="display-4 text-center mb-3">{title}</h1>
-      <p className="text-muted text-center mb-5">{subtitle}</p>
+      <p
+        className={classnames("text-center", "mb-5", {
+          "text-danger": !!errors,
+          "text-muted": !errors
+        })}
+      >
+        {!errors && !loading && subtitle}
+        {errors && errors.join(", ")}
+        {loading && "Working, please wait..."}
+      </p>
       {children}
     </div>
   </div>

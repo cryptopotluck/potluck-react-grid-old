@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { reduxForm, Field } from "redux-form";
 
-const Form = ({ handleSubmit }) => (
+const Form = ({ handleSubmit, loading }) => (
   <form onSubmit={handleSubmit}>
     <div className="form-group">
       <label>Email Address</label>
@@ -20,7 +20,7 @@ const Form = ({ handleSubmit }) => (
           <label>Password</label>
         </div>
         <div className="col-auto">
-          <Link to="/forgot" className="form-text small text-muted">
+          <Link to="/forgot" className="form-text small text-muted" tabIndex="-1">
             Forgot password?
           </Link>
         </div>
@@ -40,7 +40,7 @@ const Form = ({ handleSubmit }) => (
         </div>
       </div>
     </div>
-    <button className="btn btn-lg btn-block btn-primary mb-3">
+    <button className="btn btn-lg btn-block btn-primary mb-3" disabled={loading}>
       Sign in
     </button>
     <div className="text-center">

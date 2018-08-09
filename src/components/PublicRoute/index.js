@@ -1,15 +1,19 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 import PublicLayout from "../PublicLayout";
 
-import config from "../../config";
-
-const PublicRoute = ({ component: Component, redirectOnLoggedIn, ...rest }) => (
+const PublicRoute = ({
+  component: Component,
+  authenticated,
+  redirectOnLoggedIn,
+  ...rest
+}) => (
   <Route
     {...rest}
     render={props =>
-      redirectOnLoggedIn && config.authenticated ? (
+      redirectOnLoggedIn && authenticated ? (
         <Redirect to="/" />
       ) : (
         <PublicLayout>
@@ -20,4 +24,8 @@ const PublicRoute = ({ component: Component, redirectOnLoggedIn, ...rest }) => (
   />
 );
 
-export default PublicRoute;
+const mapStateToProps = ({ app: { authenticated } }) => ({
+  authenticated
+});
+
+export default connect(mapStateToProps)(PublicRoute);

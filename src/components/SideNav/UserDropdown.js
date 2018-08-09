@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import {
   DropdownItem,
   DropdownMenu,
@@ -7,8 +8,9 @@ import {
 } from "reactstrap";
 
 import avatars from "../../common/images/avatars";
+import { logout } from "../../actions";
 
-const UserDropdown = ({ direction, right }) => (
+const UserDropdown = ({ direction, right, handleLogout }) => (
   <UncontrolledDropdown>
     <DropdownToggle nav direction={direction}>
       <div className="avatar avatar-sm avatar-online">
@@ -27,11 +29,18 @@ const UserDropdown = ({ direction, right }) => (
         Settings
       </DropdownItem>
       <DropdownItem divider />
-      <DropdownItem tag="a" href="#!">
+      <DropdownItem tag="a" onClick={handleLogout}>
         Logout
       </DropdownItem>
     </DropdownMenu>
   </UncontrolledDropdown>
 );
 
-export default UserDropdown;
+const mapDispatchToProps = {
+  handleLogout: logout
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(UserDropdown);

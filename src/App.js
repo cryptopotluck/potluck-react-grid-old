@@ -14,7 +14,15 @@ import Signup from "./containers/Signup";
 import configureStore from "./store";
 import rootReducer from "./reducer";
 
-const store = configureStore(rootReducer);
+const appState = localStorage.getItem("appState");
+const store = configureStore(rootReducer, {
+  app: appState && JSON.parse(appState)
+});
+
+store.subscribe(() => {
+  const appState = JSON.stringify(store.getState().app);
+  localStorage.setItem("appState", appState);
+});
 
 class App extends PureComponent {
   render() {

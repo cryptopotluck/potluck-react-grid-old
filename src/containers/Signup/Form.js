@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { reduxForm, Field } from "redux-form";
 
-const Form = ({ handleSubmit }) => (
+const Form = ({ loading, handleSubmit }) => (
   <form onSubmit={handleSubmit}>
     <div className="form-group">
       <label>Email Address</label>
@@ -43,7 +43,11 @@ const Form = ({ handleSubmit }) => (
         </div>
       </div>
     </div>
-    <button className="btn btn-lg btn-block btn-primary mb-3" type="submit">
+    <button
+      className="btn btn-lg btn-block btn-primary mb-3"
+      type="submit"
+      disabled={loading}
+    >
       Sign up
     </button>
     <div className="text-center">

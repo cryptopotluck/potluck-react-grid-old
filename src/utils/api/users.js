@@ -36,3 +36,38 @@ export const signup = (
     successAction,
     failureAction
   );
+
+export const requestResetPassword = (
+  email,
+  loadingAction,
+  successAction,
+  failureAction
+) =>
+  request(
+    "users/password",
+    {
+      method: "POST",
+      body: { user: { email } }
+    },
+    loadingAction,
+    successAction,
+    failureAction
+  );
+
+export const resetPassword = (
+  password,
+  token,
+  loadingAction,
+  successAction,
+  failureAction
+) =>
+  request(
+    "users/password",
+    {
+      method: "PUT",
+      body: { user: { password, reset_password_token: token } }
+    },
+    loadingAction,
+    successAction,
+    failureAction
+  );

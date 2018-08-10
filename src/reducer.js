@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
 import { keys } from "lodash";
 
+import forgotPage from "./containers/Forgot/reducer";
 import loginPage from "./containers/Login/reducer";
 import signupPage from "./containers/Signup/reducer";
 
@@ -56,6 +57,7 @@ const reducer = (state = initialState, { type, payload }) => {
 export default combineReducers({
   app: reducer,
   form: formReducer,
+  forgotPage,
   loginPage,
   signupPage
 });

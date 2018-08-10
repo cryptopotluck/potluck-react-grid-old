@@ -17,9 +17,8 @@ const opts = {
   allow_symbol_change: true,
   save_image: false,
   studies: [
-    "ROC@tv-basicstudies",
     "StochasticRSI@tv-basicstudies",
-    "MASimple@tv-basicstudies"
+      "IchimokuCloud@tv-basicstudies",
   ],
   show_popup_button: true,
   popup_width: "1000",

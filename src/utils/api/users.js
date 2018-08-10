@@ -17,3 +17,22 @@ export const login = (
     successAction,
     failureAction
   );
+
+export const signup = (
+  email,
+  discordId,
+  password,
+  loadingAction,
+  successAction,
+  failureAction
+) =>
+  request(
+    "users",
+    {
+      method: "POST",
+      body: { user: { email, password, discord_id: discordId } }
+    },
+    loadingAction,
+    successAction,
+    failureAction
+  );

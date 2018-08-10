@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { get } from "lodash";
 import {
   DropdownItem,
   DropdownMenu,
@@ -10,7 +11,7 @@ import {
 import avatars from "../../common/images/avatars";
 import { logout } from "../../actions";
 
-const UserDropdown = ({ direction, right, handleLogout }) => (
+const UserDropdown = ({ direction, email, right, handleLogout }) => (
   <UncontrolledDropdown>
     <DropdownToggle nav direction={direction}>
       <div className="avatar avatar-sm avatar-online">
@@ -22,6 +23,9 @@ const UserDropdown = ({ direction, right, handleLogout }) => (
       </div>
     </DropdownToggle>
     <DropdownMenu right={right}>
+      <DropdownItem tag="span" disabled>
+        {email}
+      </DropdownItem>
       <DropdownItem tag="a" href="#!">
         Profile
       </DropdownItem>
@@ -29,18 +33,22 @@ const UserDropdown = ({ direction, right, handleLogout }) => (
         Settings
       </DropdownItem>
       <DropdownItem divider />
-      <DropdownItem tag="a" onClick={handleLogout}>
+      <DropdownItem tag="button" onClick={handleLogout}>
         Logout
       </DropdownItem>
     </DropdownMenu>
   </UncontrolledDropdown>
 );
 
+const mapStateToProps = ({ app: { userId, users }}) => ({
+  email: get(users, `[${userId}].attributes.email`)
+});
+
 const mapDispatchToProps = {
   handleLogout: logout
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(UserDropdown);

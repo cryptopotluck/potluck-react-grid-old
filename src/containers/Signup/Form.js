@@ -12,6 +12,17 @@ const Form = ({ handleSubmit }) => (
         name="email"
         placeholder="name@address.com"
         type="email"
+        required
+      />
+    </div>
+    <div className="form-group">
+      <label>Discord Username</label>
+      <Field
+        className="form-control"
+        component="input"
+        name="discordId"
+        placeholder="discord Username"
+        type="text"
       />
     </div>
     <div className="form-group">
@@ -23,6 +34,7 @@ const Form = ({ handleSubmit }) => (
           name="password"
           placeholder="Enter your password"
           type="password"
+          required
         />
         <div className="input-group-append">
           <span className="input-group-text">

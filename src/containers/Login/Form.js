@@ -12,6 +12,7 @@ const Form = ({ handleSubmit, loading }) => (
         name="email"
         placeholder="name@address.com"
         type="email"
+        required
       />
     </div>
     <div className="form-group">
@@ -32,6 +33,7 @@ const Form = ({ handleSubmit, loading }) => (
           name="password"
           placeholder="Enter your password"
           type="password"
+          required
         />
         <div className="input-group-append">
           <span className="input-group-text">

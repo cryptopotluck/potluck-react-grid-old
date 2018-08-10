@@ -1,6 +1,8 @@
 import React from "react";
 import classnames from "classnames";
 
+import Errors from "../Errors";
+
 import videos from "../../common/images/videos";
 
 const AuthLayout = ({ children, errors, loading, subtitle, title }) => (
@@ -24,7 +26,7 @@ const AuthLayout = ({ children, errors, loading, subtitle, title }) => (
         })}
       >
         {!errors && !loading && subtitle}
-        {errors && errors.join(", ")}
+        {errors && <Errors errors={errors} />}
         {loading && "Working, please wait..."}
       </p>
       {children}

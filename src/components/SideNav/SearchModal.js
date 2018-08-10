@@ -19,12 +19,45 @@ const coinsList = [
   "IOTA (MIOTA)",
   "Binance (BNB)",
   "NEO",
-  "Monero (XMR)"
+  "Monero (XMR)",
+  "Tron (TRX)",
+  "Ethereum Classic (ETC)",
+  "Dash",
+  "Nem",
+  "Tezos (XTZ)",
+  "Zcash (ZEC)",
+  "OmiseGO (OMG)",
+  "VeChain (VET)",
+  "0x (ZRX)",
+  "QTUM",
+  "Bytecoin (BCN)",
+  "Bitcoin Gold (BTG)",
+  "Lisk (LSK)",
+  "Decred (DCR)",
+  "BitShares (BTS)",
+  "Maker (MKR)",
+  "Zilliqa (ICX)",
+  "ICON (ICX)",
+  "DigiByte (DGB)",
+  "Aeternity (AE)",
+  "Dogecoin (DOGE)",
+  "Steemit (STEEM)",
+  "Ontology (ONT)",
+  "Augur (REP)",
+  "Basic Attention Token (BAT)",
+  "Siacoin (SC)",
+  "MOAC",
+  "Verge (XVG)",
+  "Bitcoin Diamond (BCD)",
+  "Bytom (BTM)",
+  "RChain (RHOC)",
+  "Pundi X (NPXS)",
+  "KuCoin (KCS)"
 ];
 
 const Header = () => (
   <ModalHeader style={{ padding: 0, zIndex: 999 }}>
-    <img src={coins(12)} className="img-fluid" alt="" />
+    <img src={coins(45)} className="img-fluid" alt="" />
   </ModalHeader>
 );
 

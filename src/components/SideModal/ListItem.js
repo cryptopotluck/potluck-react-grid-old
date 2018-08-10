@@ -31,11 +31,11 @@ const ListItem = ({ avatar, href, status, time, title }) => (
         </p>
       </div>
       <div className="col-auto">
-        <a href="#!" className="btn btn-sm btn-white">
+        <button className="btn btn-sm btn-white">
           <b>
             Battle <i className="fab fa-fort-awesome-alt" /> Station
           </b>
-        </a>
+        </button>
       </div>
     </div>
   </a>

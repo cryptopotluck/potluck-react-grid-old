@@ -6,7 +6,7 @@ const SearchForm = () => (
       <input
         type="search"
         className="form-control form-control-prepended search"
-        placeholder="Search"
+        placeholder="Search Altcoins..."
       />
       <div className="input-group-prepend">
         <div className="input-group-text">

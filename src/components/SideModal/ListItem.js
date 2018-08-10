@@ -6,7 +6,11 @@ const ListItem = ({ avatar, href, status, time, title }) => (
       <div className="col-auto">
         {avatar && (
           <div className="avatar">
-            <img src={avatar} alt="avatar" className="avatar-img rounded" />
+            <img
+              src={avatar}
+              alt="avatar"
+              className="avatar-img rounded-circle"
+            />
           </div>
         )}
       </div>
@@ -21,10 +25,17 @@ const ListItem = ({ avatar, href, status, time, title }) => (
           )}
           {status && (
             <span>
-              <span className="text-primary">●</span> {status}
+              <span className="text-success">●</span> {status}
             </span>
           )}
         </p>
+      </div>
+      <div className="col-auto">
+        <a href="#!" className="btn btn-sm btn-white">
+          <b>
+            Battle <i className="fab fa-fort-awesome-alt" /> Station
+          </b>
+        </a>
       </div>
     </div>
   </a>

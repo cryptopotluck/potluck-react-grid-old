@@ -16,7 +16,7 @@ import rootReducer from "./reducer";
 
 const appState = localStorage.getItem("appState");
 const store = configureStore(rootReducer, {
-  app: appState && JSON.parse(appState)
+  app: (appState ? JSON.parse(appState) : undefined)
 });
 
 store.subscribe(() => {
